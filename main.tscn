@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwvf76bex6rm"]
+
+[ext_resource type="FontFile" uid="uid://cshispam0gb63" path="res://rainyhearts.ttf" id="1_qle0r"]
+
+[sub_resource type="Theme" id="Theme_0ksy8"]
+default_font = ExtResource("1_qle0r")
+default_font_size = 30
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GoalLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 65.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_qle0r")
+theme_override_font_sizes/font_size = 30
+text = "Goal:"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -31.0
+offset_right = 164.0
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -578.0
+offset_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_0ksy8")
