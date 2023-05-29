@@ -6,7 +6,7 @@ extends Control
 #
 #var FileAccess = godot.FileAccess
 
-import Engine
+#import Engine
 
 @onready var textEdit = $TextEdit
 
@@ -18,14 +18,14 @@ func _unhandled_input(event):
 		save(text)
 
 func save(text):
-	var file = File.new()
-	file.open("user://text.txt", File.WRITE)
+	
+	var file = FileAccess.open("user://text.txt", FileAccess.WRITE)
+	file.seek_end()
 	file.store_string(text)
 	file.close()
 
 func load():
-	var file = File.new()
-	file.open("user://text.txt", File.READ)
+	var file = FileAccess.open("user://text.txt", FileAccess.READ)
 	var textInFile = file.get_as_text()
 	file.close()
 	
