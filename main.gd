@@ -16,6 +16,8 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("save"):
 		text = textEdit.get_text()
 		save(text)
+	else:
+		pass
 
 func save(text):
 	
