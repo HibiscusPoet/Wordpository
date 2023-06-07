@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddwvf76bex6rm"]
+[gd_scene load_steps=8 format=3 uid="uid://ddwvf76bex6rm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_aiv27"]
 [ext_resource type="FontFile" uid="uid://cshispam0gb63" path="res://rainyhearts.ttf" id="1_qle0r"]
@@ -7,9 +7,13 @@
 default_font = ExtResource("1_qle0r")
 default_font_size = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trcy1"]
+bg_color = Color(0.462745, 0.439216, 0.45098, 1)
+
 [sub_resource type="Theme" id="Theme_0ksy8"]
 default_font = ExtResource("1_qle0r")
 default_font_size = 30
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_trcy1")
 
 [sub_resource type="Theme" id="Theme_gx58o"]
 default_font = ExtResource("1_qle0r")
@@ -50,12 +54,14 @@ caret_blink = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 12
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -33.0
-offset_right = 719.0
+grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
 
 [node name="GoalLabel" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
@@ -66,7 +72,9 @@ text = "Goal:"
 [node name="SpinBox" type="SpinBox" parent="HBoxContainer2"]
 layout_mode = 2
 theme = SubResource("Theme_2wg23")
+min_value = 1.0
 max_value = 999999.0
+value = 1.0
 rounded = true
 
 [node name="ProgressBar" type="ProgressBar" parent="HBoxContainer2"]
@@ -92,3 +100,6 @@ text = "Load"
 layout_mode = 2
 theme = SubResource("Theme_l444d")
 text = "Save"
+
+[connection signal="text_changed" from="TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="value_changed" from="HBoxContainer2/SpinBox" to="." method="_on_spin_box_value_changed"]
