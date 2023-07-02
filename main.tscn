@@ -50,6 +50,7 @@ offset_top = 37.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
+wrap_mode = 1
 caret_blink = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
